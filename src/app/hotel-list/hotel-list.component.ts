@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
 })
 
 export class HotelListComponent {
-public  title : string = "List of hotel"
+public  title : string = "List of hotels"
 public hotels : any[] = [
   {
     "hotelId": 1,
@@ -42,4 +42,9 @@ public hotels : any[] = [
     "rating": 2.5
 }
 ]
+
+public showBadge: boolean = false;
+public toggleIsNewBadge(): void{
+  this.showBadge = !this.showBadge;
+}
 }

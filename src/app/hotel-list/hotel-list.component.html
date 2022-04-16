@@ -1,17 +1,29 @@
 
-<div class="container">
+<div class="container mb-5 mt-5">
+
   <h2 *ngIf="hotels && hotels.length>0">{{title}}</h2>
+  <button class="btn btn-primary mb-4 d-flex" (click)="toggleIsNewBadge()">
+    <span class="material-icons">
+       {{showBadge ? 'visibility_off':'visibility'}}
+    </span>
+    <span class="ml-2 mr-2">
+      {{showBadge ? 'Display new': 'Hide new'}}
+    </span>
+  </button>
+
  <div class="row">
   <div class="col mb-4" *ngFor="let hotel of hotels">
     <div class="card" style="width: 18rem;">
-      <img src="{{hotel.imageUrl}}" class="card-img-top" alt="...">
+      <img [src]="hotel.imageUrl" [title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
       <div class="card-body">
         <h5 class="card-title">{{hotel.hotelName}}</h5>
         <p class="card-text">
           {{hotel.description}}
         </p>
+        <span class="badge bg-info" *ngIf="showBadge">New</span>
       </div>
     </div>
   </div>
  </div>
+
 </div>
