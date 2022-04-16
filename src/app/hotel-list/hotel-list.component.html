@@ -1,4 +1,17 @@
 
 <div class="container">
-  <h2>{{title}}</h2>
+  <h2 *ngIf="hotels && hotels.length>0">{{title}}</h2>
+ <div class="row">
+  <div class="col mb-4" *ngFor="let hotel of hotels">
+    <div class="card" style="width: 18rem;">
+      <img src="{{hotel.imageUrl}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{hotel.hotelName}}</h5>
+        <p class="card-text">
+          {{hotel.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+ </div>
 </div>
