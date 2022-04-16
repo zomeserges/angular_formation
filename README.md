@@ -4,6 +4,11 @@
  - npm install -g @angular/cli
  - ng new my-app --defaults
 ````
+
+## 02 installation et utilisation de bootstrap:
+````
+npm install bootstrap --save
+````
 # MonApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
