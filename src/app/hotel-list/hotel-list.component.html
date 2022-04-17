@@ -42,6 +42,9 @@
         <p class="card-text">
           {{hotel.price | currency :"EUR" : "symbol" : "1.2-2" : "fr" | replaceComma }}
         </p>
+        
+        <app-star-rating></app-star-rating>
+
         <span class="badge bg-info" *ngIf="showBadge">New</span>
       </div>
     </div>

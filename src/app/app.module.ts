@@ -6,13 +6,15 @@ import localeFr from '@angular/common/locales/fr';
 import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { ReplaceComma } from './shered/pipes/replace-comma.pipe';
+import { starRatingComponent } from './shered/components/star-rating/star-rating.component';
 
 registerLocaleData(localeFr,"fr");
 @NgModule({
   declarations: [
     AppComponent,
     HotelListComponent,
-    ReplaceComma
+    ReplaceComma,
+    starRatingComponent
   ],
   imports: [
     BrowserModule,
