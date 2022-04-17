@@ -47,6 +47,7 @@ public hotels : IHotel[] = [
 private _hotelFilter = "mot";
 public showBadge: boolean = false;
 public filteredHotels: IHotel[] = [];
+public receivedRating: string ="";
 
 
 ngOnInit(): void {
@@ -73,6 +74,10 @@ private filterHotels(creteria: string): IHotel[]{
     (hotel: IHotel)=> hotel.hotelName.toLocaleLowerCase().indexOf(creteria) !==-1
   )
   return res;
+}
+
+public receiveRatingCliked(message: string):void{
+  this.receivedRating = message;
 }
 
 }
