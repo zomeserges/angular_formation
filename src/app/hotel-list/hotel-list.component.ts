@@ -43,6 +43,8 @@ public hotels : any[] = [
 }
 ]
 
+public hotelFilter = "mot";
+
 public showBadge: boolean = false;
 public toggleIsNewBadge(): void{
   this.showBadge = !this.showBadge;

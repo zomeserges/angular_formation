@@ -10,6 +10,20 @@
       {{showBadge ? 'Display new': 'Hide new'}}
     </span>
   </button>
+  <hr>
+
+  <div class="my-2">
+    <div class="row d-flex">
+      <div class="col-md-4">
+        <span>Actual fielter: </span>
+        <b>{{hotelFilter}}</b>
+      </div>
+      <div class="col-md-8 form-group">
+        <!--(ngModelChange)="hotelFilter=$event"-->
+       <input type="text" class="form-control" [(ngModel)]="hotelFilter">
+      </div>
+    </div>
+  </div>
 
  <div class="row">
   <div class="col mb-4" *ngFor="let hotel of hotels">
