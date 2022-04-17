@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IHotel } from "./hotel";
 
 @Component({
@@ -7,7 +7,7 @@ import { IHotel } from "./hotel";
   styleUrls:[]
 })
 
-export class HotelListComponent {
+export class HotelListComponent implements OnInit{
 public  title : string = "List of hotels"
 public hotels : IHotel[] = [
   {
@@ -47,6 +47,11 @@ public hotels : IHotel[] = [
 public hotelFilter = "mot";
 
 public showBadge: boolean = false;
+
+ngOnInit(): void {
+  console.log("initialisation de mon niveau de vie");
+}
+
 public toggleIsNewBadge(): void{
   this.showBadge = !this.showBadge;
 }
