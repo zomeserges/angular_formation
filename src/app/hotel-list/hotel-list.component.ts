@@ -41,18 +41,38 @@ public hotels : IHotel[] = [
     "price": 135.12,
     "imageUrl": "assets/img/window.jpg",
     "rating": 2.5
-}
-]
+}];
 
-public hotelFilter = "mot";
 
+private _hotelFilter = "mot";
 public showBadge: boolean = false;
+public filteredHotels: IHotel[] = [];
+
 
 ngOnInit(): void {
-  console.log("initialisation de mon niveau de vie");
+ this.filteredHotels = this.hotels;
+ this.hotelFilter = "mot"
 }
 
 public toggleIsNewBadge(): void{
   this.showBadge = !this.showBadge;
 }
+
+public get hotelFilter() : string{
+  return this._hotelFilter;
+}
+
+public set hotelFilter(filter: string) {
+   this._hotelFilter = filter;
+   this.filteredHotels = this.hotelFilter ? this.filterHotels(this.hotelFilter) : this.hotels
+}
+
+private filterHotels(creteria: string): IHotel[]{
+  creteria = creteria.toLocaleLowerCase();
+  const res = this.hotels.filter(
+    (hotel: IHotel)=> hotel.hotelName.toLocaleLowerCase().indexOf(creteria) !==-1
+  )
+  return res;
+}
+
 }
