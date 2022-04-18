@@ -17,12 +17,19 @@ private _hotelFilter = "mot";
 public showBadge: boolean = false;
 public filteredHotels: IHotel[] = [];
 public receivedRating: string ="";
+public errorMessage: string = "";
 
 constructor(private hotelListService: HotelListService){}
 
 ngOnInit(): void {
-  this.hotels = this.hotelListService.getHotels();
- this.filteredHotels = this.hotels;
+ this.hotelListService.getHotels().subscribe({
+   next: hotels => {
+    this.hotels = hotels
+    this.filteredHotels = this.hotels;
+   },
+   error: err =>this.errorMessage = err
+ });
+
  this.hotelFilter = ""
 }
 
